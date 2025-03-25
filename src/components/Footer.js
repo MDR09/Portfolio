@@ -8,10 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <p>&copy; {new Date().getFullYear()} Rinku Yadav. All rights reserved.</p>
         <div className="social-links">
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-linkedin"></i></a>
-          <a href="#"><i className="fab fa-github"></i></a>
+          
         </div>
       </div>
     </footer>

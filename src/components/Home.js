@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Youtube, TowerControl as GameController, Download } from 'lucide-react';
+import { Github, Linkedin, TowerControl as Download } from 'lucide-react';
 import '../styles/Hero.css';
 
 function Home() {
@@ -33,7 +33,7 @@ function Home() {
   
       const timer = setTimeout(handleTyping, typingSpeed);
       return () => clearTimeout(timer);
-    }, [role, isDeleting, loopNum, roles]);
+    }, [role, isDeleting, loopNum, roles, typingSpeed]);
   return (
     <div className="hero-container">
       {/* Hero Section */}
