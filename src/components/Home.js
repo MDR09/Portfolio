@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, TowerControl as Download } from 'lucide-react';
+import { Github, Linkedin, Download } from 'lucide-react';
 import '../styles/Hero.css';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
   
-    const roles = ['Coder', 'Web Developer', 'Programmer'];
+    const roles = useMemo(() => ['Coder', 'Web Developer', 'Programmer'], []);
     
     useEffect(() => {
       const handleTyping = () => {
