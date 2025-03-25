@@ -1,0 +1,156 @@
+/* src/styles/Contact.css */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(2rem, 5vw, 3.125rem);
+  margin-top: clamp(2rem, 5vw, 3.125rem);
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 clamp(1rem, 3vw, 1.5rem);
+  box-sizing: border-box;
+}
+
+.section h2 {
+  color: #22c55e;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 0.625rem);
+  color: #22c55e;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin: 0;
+}
+
+.contact-info i {
+  color: #000;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  width: clamp(1.5rem, 3vw, 1.875rem);
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.form-row {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 0; /* Prevent flex items from overflowing */
+}
+
+input, textarea {
+  padding: clamp(0.75rem, 2vw, 0.9375rem);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  transition: all 0.3s ease;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, 
+textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+textarea {
+  min-height: clamp(120px, 25vw, 150px);
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #22c55e;
+  color: white;
+  padding: clamp(0.75rem, 2vw, 0.9375rem) clamp(1.5rem, 3vw, 2rem);
+  border: none;
+  border-radius: 5px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background-color: #1a9f4a;
+  transform: translateY(-2px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  input, textarea {
+    padding: 0.75rem;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  input, textarea {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #f7fafc;
+  }
+  
+  .contact-info i {
+    color: #f7fafc;
+  }
+  
+  input:focus, 
+  textarea:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion) {
+  input,
+  textarea,
+  .submit-btn {
+    transition: none;
+  }
+  
+  .submit-btn:hover {
+    transform: none;
+  }
+}
