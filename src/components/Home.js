@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Download } from 'lucide-react';
+import { Github, Download } from 'lucide-react';
 import '../styles/Hero.css';
 
 function Home() {
