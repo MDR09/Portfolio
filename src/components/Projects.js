@@ -4,40 +4,46 @@ import "../styles/Projects.css";
 const Projects = () => {
   const projects = [
     {
-      title: "AI-Powered Code Reviewer",
-      description: "Full-stack application that provides real-time code suggestions and error detection using AI",
-      technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", "Gemini API", "MongoDB"],
+      title: "Real Time Code Editor",
+      description: "Full-stack application that provides real-time synchronization of code changes across multiple users with instant updates via Socket.io",
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Socket.io"],
       features: [
-        "Real-time code suggestions",
-        "Error detection and improvements",
+        "Real-time code editing",
+        "Compile at real-time",
         "MongoDB data storage",
         "Responsive frontend design"
       ],
-      category: "Full Stack"
+      category: "Full Stack",
+      demoUrl: "https://your-demo-link-1.com",
+      codeUrl: "https://github.com/yourusername/project1"
     },
     {
-      title: "Doctor Appointment Website",
-      description: "Frontend system for booking doctor appointments with search and filtering capabilities",
-      technologies: ["React.js", "Tailwind CSS"],
+      title: "Charity Management System",
+      description: "Full stack website the provide features like donor registration, event scheduling, and real-time data management with Firebase.",
+      technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
       features: [
-        "Doctor search functionality",
-        "Appointment scheduling",
-        "Specialization filtering",
+        "Donor Registration and Management",
+        "Donation Tracking",
+        "Volunteer Registration",
         "Responsive design"
       ],
-      category: "Frontend"
+      category: "Full Stack",
+      demoUrl: "https://ngo-charity.netlify.app/",
+      codeUrl: "https://github.com/MDR09/Charity-Donation-"
     },
     {
-      title: "Weather Web App",
-      description: "Weather application displaying real-time data for multiple locations",
-      technologies: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+      title: "Railway Management System",
+      description: "Implemented features like ticket booking, train search, and real-time schedule updates with Flask and SQL for backend processing",
+      technologies: ["HTML", "CSS", "JavaScript", "Flask", "SQL"],
       features: [
-        "Real-time weather data",
-        "Location detection",
-        "Temperature conversion",
-        "Responsive UI"
+        "Train Search and Schedule Viewing",
+        "Ticket Booking System",
+        "Passenger Data Management",
+        "Admin Dashboard"
       ],
-      category: "Web Development"
+      category: "Web Development",
+      demoUrl: "https://your-demo-link-3.com",
+      codeUrl: "https://github.com/MDR09/Railway"
     }
   ];
 
@@ -78,8 +84,26 @@ const Projects = () => {
             </div>
 
             <div className="project-links">
-              <button className="demo-btn">View Demo</button>
-              <button className="code-btn">View Code</button>
+              {project.demoUrl && (
+                <a 
+                  href={project.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="demo-btn"
+                >
+                  View Demo
+                </a>
+              )}
+              {project.codeUrl && (
+                <a 
+                  href={project.codeUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="code-btn"
+                >
+                  View Code
+                </a>
+              )}
             </div>
           </div>
         ))}

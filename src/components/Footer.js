@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Rinku Yadav. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Manish Dharawaniya. All rights reserved.</p>
         <div className="social-links">
           
         </div>

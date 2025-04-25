@@ -38,8 +38,8 @@ const Contact = () => {
       
       <div className="contact-container">
         <div className="contact-info">
-          <p><i className="fas fa-phone"></i> Phone: (+91) 9351738827</p>
-          <p><i className="fas fa-envelope"></i> Email: rinku4ce9@gmail.com</p>
+          <p><i className="fas fa-phone"></i> Phone: (+91) 8233660611</p>
+          <p><i className="fas fa-envelope"></i> Email: manishjini29@gmail.com</p>
           <p><i className="fas fa-map-marker-alt"></i> Address: MNIT Jaipur</p>
         </div>
         

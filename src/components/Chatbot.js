@@ -9,53 +9,57 @@ const Chatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Rinku Yadav's portfolio data
-  const portfolioData = `
-  ## NAME - RINKU YADAV
+  // Manish Dharawaniya's resume data
+  const resumeData = `
+  ## NAME - MANISH DHARAWANIYA
 
-  ## EDUCATION
-  - **B.Tech in Electronics and Communication Engineering**
-    - Malaviya National Institute of Technology, Jaipur (2020-2024)
-    - CGPA: 8.02/10
-  - **Senior Secondary (12th Grade)**
-    - Matrix High School, Sikar, Rajasthan
-    - Percentage: 87.20% (PCM)
-  - **Secondary (10th Grade)**
-    - HDI Public School, Sikar, Rajasthan
-    - Percentage: 86.5%
+  ## CONTACT
+  - Location: Jaipur
+  - Phone: +91 8233660611
+  - Email: manishjini29@gmail.com
+  - Github: Available (see resume)
 
-  ## TECHNICAL SKILLS
-  - **Programming Languages:** C, C++, HTML, CSS, JavaScript, SQL
-  - **Technologies/Frameworks:** React.js, Tailwind CSS
-  - **Tools:** VS Code, Git, GitHub
-  - **Coursework:** DSA, Operating Systems, Microprocessors, Computer Architecture
+  ## PROFESSIONAL SUMMARY
+  Passionate about Computer Science, I am a Bachelor's student with a strong academic foundation and a knack for problem-solving. Excited to collaborate on innovative projects, I am actively seeking an internship opportunity to translate theoretical knowledge into practical applications. My goal is to cultivate diverse technical skills and gain hands-on experience in real-world scenarios.
+
+  ## SKILLS
+  - Programming Languages: C, C++, HTML, CSS, Javascript, SQL
+  - Technologies/Frameworks: React.js, Node.js, Express.js, MongoDB, Basic Flask
+  - Tools Used: VS Code, Git, Github, Firebase
+  - Soft Skills: Communication, Problem Solving, Teamwork, Time management
+  - Coursework: Introduction to Computer Science, Data Structures and Algorithms, Operating Systems, Object Oriented Programming and Database Management system
 
   ## PROJECTS
-  ### 1. AI-Powered Code Reviewer (Full Stack)
-  - **Tech Stack:** React.js, Tailwind CSS, Node.js, Express, Gemini API, MongoDB
-  - **Features:**
-    - Real-time code suggestions and error detection
-    - Integrated AI for code improvements
-    - Responsive frontend design
+  ### 1. Real-Time Code Editor (Full Stack)
+  - Tools and Technologies Used: MongoDB, Express.js, React.js, Node.js, Socket.io
+  - Developed a Real-Time Code Editor using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for live collaboration.
+  - Implemented real-time synchronization of code changes across multiple users with instant updates via Socket.io.
+  - Built a responsive frontend with React.js, managing user sessions and document storage using MongoDB and Express.js.
 
-  ### 2. Doctor Appointment Website (Frontend)
-  - **Tech Stack:** React.js, Tailwind CSS
-  - **Features:**
-    - Doctor search and filtering
-    - Appointment scheduling system
-    - Responsive UI for all devices
+  ### 2. Charity Management System (Full Stack)
+  - Tools and Technologies Used: HTML, CSS, JavaScript, Firebase
+  - Developed a Charity Management System using HTML, CSS, JavaScript, and Firebase to manage donations, volunteers, and events.
+  - Implemented features like donor registration, event scheduling, and real-time data management with Firebase.
+  - Designed responsive user interfaces and integrated Firebase for authentication, data storage, and live updates.
 
-  ### 3. Weather Web App
-  - **Tech Stack:** HTML, CSS, JavaScript, OpenWeather API
-  - **Features:**
-    - Real-time weather data display
-    - Location detection
-    - Temperature conversion
+  ### 3. Railway Management System (Full Stack)
+  - Tools and Technologies Used: HTML, CSS, JavaScript, SQL, Flask
+  - Developed a Railway Management System using HTML, CSS, JavaScript, SQL, and Flask to manage train schedules, bookings, and passenger data.
+  - Implemented features like ticket booking, train search, and real-time schedule updates with Flask and SQL for backend processing.
+  - Designed responsive interfaces with HTML, CSS, and JavaScript, ensuring smooth user interactions and efficient data handling.
+
+  ## EDUCATION
+  - **B.Tech in Computer Science And Engineering** (Expected 2026)
+    - Malaviya National Institute of Technology, Jaipur, Rajasthan
+    - Relevant Courses: DSA, Operating Systems, DBMS, Software Engineering
+  - **Senior Secondary** (04/2021)
+    - Ritual Public School, RamganjMandi, Rajasthan
+  - **Secondary**
+    - Aklank Public School, Kota, Rajasthan (04/2018)
 
   ## POSITIONS OF RESPONSIBILITY
-  - Joint Secretary | Dance Club | MNIT Jaipur
-  - Technical Team Member | Sphinx 2023
-  - Executive | Cultural Team | Sphinx 2023
+  - Volunteer | Cultural Team | Blitzschlag | 2023
+  - Volunteer | NSS | 2023
   `;
 
   const scrollToBottom = () => {
@@ -73,7 +77,7 @@ const Chatbot = () => {
 
     try {
         const apiKey = process.env.REACT_APP_TOGETHER_API_KEY;
-    if (!apiKey) throw new Error("API key missing");
+        if (!apiKey) throw new Error("API key missing");
       const response = await axios.post(
         'https://api.together.xyz/v1/chat/completions',
         {
@@ -81,16 +85,16 @@ const Chatbot = () => {
           messages: [
             {
               role: "system",
-              content: `You are an AI assistant for Rinku Yadav's portfolio. 
-              Below is Rinku's complete information. Use only this data to answer questions:
+              content: `You are an AI assistant for Manish Dharawaniya's resume. 
+              Below is Manish's complete information. Use only this data to answer questions:
 
-              ${portfolioData}
+              ${resumeData}
 
               Guidelines:
-              1. Only answer those questions that will ask in chat no another information 
+              1. Only answer questions about Manish's resume
               2. Only answer from the provided data
-              3. For unknown queries: "That information isn't in Rinku's portfolio"
-              4. Keep answers professional`
+              3. For unknown queries: "That information isn't in Manish's resume"
+              4. Keep answers professional and concise`
             },
             { role: "user", content: input }
           ],
@@ -113,7 +117,7 @@ const Chatbot = () => {
     } catch (error) {
       console.error("Chatbot error:", error);
       setMessages(prev => [...prev, 
-        { text: "I'm having trouble accessing Rinku's information right now.", sender: 'bot' }
+        { text: "I'm having trouble accessing Manish's information right now.", sender: 'bot' }
       ]);
     } finally {
       setIsLoading(false);
@@ -128,14 +132,14 @@ const Chatbot = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? 'Close chatbot' : 'Open chatbot'}
       >
-        {isOpen ? '×' : 'Ask About Rinku'}
+        {isOpen ? '×' : 'Ask About Manish'}
       </button>
       
       {isOpen && (
         <div className="chatbot-window">
           <div className="chatbot-header">
-            <h4>Rinku's Portfolio Assistant</h4>
-            <p>Powered by Together AI</p>
+            <h4>Manish's Resume Assistant</h4>
+            <p>Ask about skills, projects, or education</p>
           </div>
           
           <div className="chatbot-messages">

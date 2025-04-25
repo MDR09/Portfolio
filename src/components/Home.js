@@ -46,7 +46,7 @@ function Home() {
               transition={{ duration: 0.5 }}
               className="hero-text-content"
             >
-              <h2 className="hero-title">Rinku Yadav</h2>
+              <h2 className="hero-title">Manish Dharawaniya</h2>
               <div className="hero-subtitle-container">
                 <span className="hero-subtitle-text">I'm a</span>
                 <span className="hero-subtitle-highlight">
@@ -55,15 +55,14 @@ function Home() {
                 </span>
               </div>
               <p className="hero-description">
-              Passionate about Electronics and Communication, I am a Bachelor's student with a strong academic foundation
-and a knack for problem-solving. Excited to collaborate on innovative projects, I am actively seeking an
-internship opportunity to translate theoretical knowledge into practical applications. My goal is to cultivate
-diverse technical skills and gain hands-on experience in real-world scenarios.
-
+              Passionate about Computer Science, I am a Bachelor's student with a strong academic foundation and a knack for
+problem-solving. Excited to collaborate on innovative projects, I am actively seeking an internship opportunity to
+translate theoretical knowledge into practical applications. My goal is to cultivate diverse technical skills and gain
+hands-on experience in real-world scenarios.
               </p>
               <div className="hero-actions">
                 <motion.a
-                  href="https://drive.google.com/file/d/1L_C7ZRJoOElNvBjI9oUL27-aKG7mLWiW/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1pTPcwTGzWIhmhE9S9OJp0kEKpsJ3kOku/view?usp=sharing"
                   target="_blank"
                   className="download-button"
                   whileHover={{ scale: 1.05 }}
@@ -74,7 +73,7 @@ diverse technical skills and gain hands-on experience in real-world scenarios.
                 </motion.a>
                 <div className="social-icons">
                   <motion.a
-                    href="https://github.com/rinku21022"
+                    href="https://github.com/MDR09"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-icon"
@@ -82,15 +81,15 @@ diverse technical skills and gain hands-on experience in real-world scenarios.
                   >
                     <Github size={20} />
                   </motion.a>
-                  <motion.a
-                    href="https://www.linkedin.com/in/rinku-yadav2102"
+                  {/* <motion.a
+                    href="https://www.linkedin.com/in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-icon"
                     whileHover={{ scale: 1.1 }}
                   >
                     <Linkedin size={20} />
-                  </motion.a>
+                  </motion.a> */}
                   {/* <motion.a
                     href="https://youtube.com"
                     target="_blank"

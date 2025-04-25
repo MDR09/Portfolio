@@ -4,30 +4,27 @@ import "../styles/Education.css";
 const Education = () => {
   const educationData = [
     {
-      degree: "B.Tech in Electronics and Communication Engineering",
+      degree: "B.Tech in Computer Science And Engineering",
       institution: "Malaviya National Institute of Technology, Jaipur",
-      year: "2020 - 2024",
+      year: "2022 - 2026",
       details: [
-        "CGPA: 8.02/10",
-        "Relevant Courses: DSA, Operating Systems, Microprocessors and Computer Architecture"
+        "Relevant Courses: DSA, Operating Systems And Database Management System"
       ]
     },
     {
       degree: "Senior Secondary (12th Grade)",
-      institution: "Matrix High School, Sikar, Rajasthan",
-      year: "2018 - 2020",
+      institution: "Ritual Public School, Kota, Rajasthan",
+      year: "2021 - 2022",
       details: [
-        "Percentage: 87.20% (PCM)",
         "Board: Rajasthan Board of Secondary Education"
       ]
     },
     {
       degree: "Secondary (10th Grade)",
-      institution: "HDI Public School, Sikar, Rajasthan",
-      year: "2018",
+      institution: "Aklank Public School, Kota, Rajasthan",
+      year: "2019",
       details: [
-        "Percentage: 86.5%",
-        "Board: Rajasthan Board of Secondary Education"
+        "Board: Central Board of Secondary Education"
       ]
     }
   ];
