@@ -1,25 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Projects.css";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
-      title: "Real Time Code Editor",
-      description: "Full-stack application that provides real-time synchronization of code changes across multiple users with instant updates via Socket.io",
-      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Socket.io"],
+      title: "TripWise",
+      description: "An AI-powered trip planner that suggests personalized travel itineraries",
+      technologies: ["React.js", "Firebase", "Gemini API", "LocationIQ API", "Unsplash API"],
       features: [
-        "Real-time code editing",
-        "Compile at real-time",
-        "MongoDB data storage",
-        "Responsive frontend design"
+        "AI-based destination and activity recommendations using Gemini API",
+        "Interactive maps via LocationIQ",
+        "Destination visuals powered by Unsplash API",
+        "Secure travel plan saving and real-time updates with Firebase"
       ],
       category: "Full Stack",
-      demoUrl: "https://your-demo-link-1.com",
-      codeUrl: "https://github.com/yourusername/project1"
+      demoUrl: "https://tripwisee.netlify.app/",
+      codeUrl: "https://github.com/MDR09/TripWise"
+    },
+    {
+      title: "Expense Tracker",
+      description: "A full-stack application to track and visualize daily expenses",
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
+      features: [
+        "Responsive dashboard with add/update/delete expense functionality",
+        "Dynamic charts and category-wise expense tracking",
+        "Secure RESTful APIs using Express.js and Node.js",
+        "JWT-based authentication and React state management"
+      ],
+      category: "Full Stack",
+      demoUrl: "https://github.com/yourusername/expense-tracker",
+      codeUrl: "https://github.com/yourusername/expense-tracker"
+    },
+    {
+      title: "Job Board",
+      description: "A modern job portal for job posting and application with secure authentication",
+      technologies: ["React.js", "Tailwind CSS", "Firebase", "Clerk", "ShadCN UI"],
+      features: [
+        "Responsive and modern UI with Tailwind CSS and ShadCN UI",
+        "User sign-up/login with Clerk and role-based access",
+        "Real-time job posting and user data management using Firebase"
+      ],
+      category: "Full Stack",
+      demoUrl: "https://your-job-portal-link.com",
+      codeUrl: "https://github.com/yourusername/job-board"
     },
     {
       title: "Charity Management System",
-      description: "Full stack website the provide features like donor registration, event scheduling, and real-time data management with Firebase.",
+      description: "Full stack website that provides features like donor registration, event scheduling, and real-time data management with Firebase.",
       technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
       features: [
         "Donor Registration and Management",
@@ -30,22 +59,10 @@ const Projects = () => {
       category: "Full Stack",
       demoUrl: "https://ngo-charity.netlify.app/",
       codeUrl: "https://github.com/MDR09/Charity-Donation-"
-    },
-    {
-      title: "Railway Management System",
-      description: "Implemented features like ticket booking, train search, and real-time schedule updates with Flask and SQL for backend processing",
-      technologies: ["HTML", "CSS", "JavaScript", "Flask", "SQL"],
-      features: [
-        "Train Search and Schedule Viewing",
-        "Ticket Booking System",
-        "Passenger Data Management",
-        "Admin Dashboard"
-      ],
-      category: "Web Development",
-      demoUrl: "https://your-demo-link-3.com",
-      codeUrl: "https://github.com/MDR09/Railway"
     }
   ];
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
     <section className="projects-section" id="projects">
@@ -55,7 +72,7 @@ const Projects = () => {
       </div>
 
       <div className="projects-grid">
-        {projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <div className="project-card" key={index}>
             <div className="project-header">
               <span className="project-category">{project.category}</span>
@@ -85,9 +102,9 @@ const Projects = () => {
 
             <div className="project-links">
               {project.demoUrl && (
-                <a 
-                  href={project.demoUrl} 
-                  target="_blank" 
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="demo-btn"
                 >
@@ -95,9 +112,9 @@ const Projects = () => {
                 </a>
               )}
               {project.codeUrl && (
-                <a 
-                  href={project.codeUrl} 
-                  target="_blank" 
+                <a
+                  href={project.codeUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="code-btn"
                 >
@@ -108,6 +125,14 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      {projects.length > 3 && (
+        <div className="view-more-container">
+          <button className="view-more-btn" onClick={() => setShowAll(!showAll)}>
+            {showAll ? "View Less" : "View More"}
+          </button>
+        </div>
+      )}
     </section>
   );
 };
